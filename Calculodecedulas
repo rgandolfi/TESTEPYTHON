@@ -1,12 +1,6 @@
+from datetime import date
 diaria = float(1)
-cem = int (0)
-cinq = int (0)
-vinte = int (0)
-dez = int (0)
-cinco = int (0)
-dois = int(0)
-um = int(0)
-ncem = int (0)
+ncem = 0
 ncinq = int (0)
 nvinte = int (0)
 ndez = int (0)
@@ -16,13 +10,8 @@ num = int(0)
 valor = float(0)
 valortt = float(0.00)
 n = int(0)
-final = int(2) 
+final = int(2)
 cont = int(0)
-c50 = int(0)
-c25 = int(0)
-c10 = int(0)
-c05 = int(0)
-c01 = int(0)
 nc50 = int(0)
 nc25 = int(0)
 nc10 = int(0)
@@ -38,7 +27,6 @@ while(n != final):
     while (diaria > 0):
         if(diaria == 1):
             diaria = float(input("Qual o Valor da Diaria? " ))
-
         valor = 0
         cem = int(diaria // 100)
         diaria = diaria - (100*cem)
@@ -68,10 +56,8 @@ while(n != final):
         diaria = diaria - (1*um)
         valor = valor + (1*um)
         num = num+um
-        print(diaria)
         if(diaria > 0):
             diaria = int(diaria * 100)
-            print(diaria)
             c50 = int(diaria // 50)
             diaria = diaria - (50*c50)
             valor = valor + (0.5*c50)
@@ -96,42 +82,70 @@ while(n != final):
         valortt = float(valortt+valor)
         cont = cont + 1
 
+arquivo = open("Cedulas.txt","w")
+arquivo.writelines(f"NOTAS NECESSARIAS PARA AS DIARIAS \n")
+
+data_atual = date.today()
+data_em_texto = data_atual.strftime('%d/%m/%Y')
+print(f'\n{data_em_texto}\n\n')
+arquivo.writelines(f"Data: {data_em_texto}\n\n")
+
+#arquivo.write()
 if (ncem > 0):
     print(f"Precisaremos de {ncem} nota(s) de R$100,00")
+    arquivo.writelines(f"Precisaremos de {ncem} nota(s) de R$100,00\n")
 
 if (ncinq > 0):
     print(f"Precisaremos de {ncinq} nota(s) de R$50,00")
+    arquivo.writelines(f"Precisaremos de {ncinq} nota(s) de R$50,00\n")
 
 if (nvinte > 0):
     print(f"Precisaremos de {nvinte} nota(s) de R$20,00")
+    arquivo.writelines(f"Precisaremos de {nvinte} nota(s) de R$20,00\n")
 
 if (ndez > 0):
     print(f"Precisaremos de {ndez} nota(s) de R$10,00")
+    arquivo.writelines(f"Precisaremos de {ndez} nota(s) de R$10,00\n")
 
 if (ncinco > 0):
     print(f"Precisaremos de {ncinco} nota(s) de R$05,00")
+    arquivo.writelines(f"Precisaremos de {ncinco} nota(s) de R$05,00\n")
 
 if (ndois > 0):
     print(f"Precisaremos de {ndois} nota(s) de R$02,00")
+    arquivo.writelines(f"Precisaremos de {ndois} nota(s) de R$02,00\n")
 
 if (num > 0):
     print(f"Precisaremos de {num} moeda(s) de R$01,00")
+    arquivo.writelines(f"Precisaremos de {num} moeda(s) de R$01,00\n")
 
 if (nc50 > 0):
     print(f"Precisaremos de {nc50} moeda(s) de R$00,50")
+    arquivo.write(f"Precisaremos de {nc50} moeda(s) de R$00,50\n")
 
 if (nc25 > 0):
     print(f"Precisaremos de {nc25} moeda(s) de R$00,25")
+    arquivo.write(f"Precisaremos de {nc25} moeda(s) de R$00,25\n")
 
 if (nc10 > 0):
     print(f"Precisaremos de {nc10} moeda(s) de R$00,10")
+    arquivo.writelines(f"Precisaremos de {nc10} moeda(s) de R$0,10\n")
 
 if (nc05 > 0):
     print(f"Precisaremos de {nc05} moeda(s) de R$00,05")
+    arquivo.writelines(f"Precisaremos de {nc05} moeda(s) de R$00,05\n")
 
 if (nc01 > 0):
     print(f"Precisaremos de {nc01} moeda(s) de R$00,01")
+    arquivo.writelines(f"Precisaremos de {nc01} moeda(s) de R$00,01\n")
 
 
-print(f'Valor total de diarias: R${valortt}')
-print('total de diarias = ',cont)
+print(f'\nValor total de diarias: R${valortt}')
+arquivo.writelines(f"\nValor total de diarias: R${valortt}\n")
+#print(f'\nTotal de diarias = {cont}\n')
+#arquivo.writelines(f'Total de diarias = {cont}')
+
+arquivo.close()
+
+print('Obrigado por usar nosso sistema!')
+input("Pressione qualquer tecla para sair!")
