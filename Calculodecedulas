@@ -1,0 +1,137 @@
+diaria = float(1)
+cem = int (0)
+cinq = int (0)
+vinte = int (0)
+dez = int (0)
+cinco = int (0)
+dois = int(0)
+um = int(0)
+ncem = int (0)
+ncinq = int (0)
+nvinte = int (0)
+ndez = int (0)
+ncinco = int (0)
+ndois = int(0)
+num = int(0)
+valor = float(0)
+valortt = float(0.00)
+n = int(0)
+final = int(2) 
+cont = int(0)
+c50 = int(0)
+c25 = int(0)
+c10 = int(0)
+c05 = int(0)
+c01 = int(0)
+nc50 = int(0)
+nc25 = int(0)
+nc10 = int(0)
+nc05 = int(0)
+nc01 = int(0)
+
+#for n in final:
+while(n != final):
+    if(cont > 0):
+        n = int(input("Deseja inserir mais uma diaria? (1-Sim/2-Não)" ))
+    if (n !=final):
+        diaria = 1
+    while (diaria > 0):
+        if(diaria == 1):
+            diaria = float(input("Qual o Valor da Diaria? " ))
+
+        valor = 0
+        cem = int(diaria // 100)
+        diaria = diaria - (100*cem)
+        valor = valor + (100*cem)
+        ncem = ncem+cem
+        cinq = int(diaria // 50)
+        diaria = diaria - (50*cinq)
+        valor = valor + (50*cinq)
+        ncinq = ncinq + cinq
+        vinte = int(diaria // 20)
+        diaria = diaria - (20*vinte)
+        valor = valor + (20*vinte)
+        nvinte = nvinte+vinte
+        dez = int(diaria // 10)
+        diaria = diaria - (10*dez)
+        valor = valor + (10*dez)
+        ndez = ndez+dez
+        cinco = int(diaria // 5)
+        diaria = diaria - (5*cinco)
+        valor = valor + (5*cinco)
+        ncinco = ncinco + cinco
+        dois = int(diaria // 2)
+        diaria = diaria - (2*dois)
+        valor = valor + (2*dois)
+        ndois = ndois + dois
+        um = int(diaria // 1)
+        diaria = diaria - (1*um)
+        valor = valor + (1*um)
+        num = num+um
+        print(diaria)
+        if(diaria > 0):
+            diaria = int(diaria * 100)
+            print(diaria)
+            c50 = int(diaria // 50)
+            diaria = diaria - (50*c50)
+            valor = valor + (0.5*c50)
+            nc50 = int(nc50+c50)
+            c25 = int(diaria // 25)
+            diaria = diaria - (25*c25)
+            valor = valor + (0.25*c25)
+            nc25 = int(nc25+c25)
+            c10 = int(diaria // 10)
+            diaria = diaria - (10*c10)
+            valor = valor + (0.10*c10)
+            nc10 = int(nc10+c10)
+            c05 = int(diaria // 5)
+            diaria = diaria - (5*c05)
+            valor = valor + (0.05*c05)
+            nc05 = int(nc05+c05)
+            c01 = int(diaria // 1)
+            diaria = diaria - (1*c01)
+            valor = valor + (0.01*c01)
+            nc01 = int(nc01+c01)
+
+        valortt = float(valortt+valor)
+        cont = cont + 1
+
+if (ncem > 0):
+    print(f"Precisaremos de {ncem} nota(s) de R$100,00")
+
+if (ncinq > 0):
+    print(f"Precisaremos de {ncinq} nota(s) de R$50,00")
+
+if (nvinte > 0):
+    print(f"Precisaremos de {nvinte} nota(s) de R$20,00")
+
+if (ndez > 0):
+    print(f"Precisaremos de {ndez} nota(s) de R$10,00")
+
+if (ncinco > 0):
+    print(f"Precisaremos de {ncinco} nota(s) de R$05,00")
+
+if (ndois > 0):
+    print(f"Precisaremos de {ndois} nota(s) de R$02,00")
+
+if (num > 0):
+    print(f"Precisaremos de {num} moeda(s) de R$01,00")
+
+if (nc50 > 0):
+    print(f"Precisaremos de {nc50} moeda(s) de R$00,50")
+
+if (nc25 > 0):
+    print(f"Precisaremos de {nc25} moeda(s) de R$00,25")
+
+if (nc10 > 0):
+    print(f"Precisaremos de {nc10} moeda(s) de R$00,10")
+
+if (nc05 > 0):
+    print(f"Precisaremos de {nc05} moeda(s) de R$00,05")
+
+if (nc01 > 0):
+    print(f"Precisaremos de {nc01} moeda(s) de R$00,01")
+
+
+print(f'Valor total de diarias: R${valortt}')
+print('total de diarias = ',cont)
