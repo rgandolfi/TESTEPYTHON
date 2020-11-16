@@ -18,7 +18,6 @@ nc10 = int(0)
 nc05 = int(0)
 nc01 = int(0)
 
-#for n in final:
 while(n != final):
     if(cont > 0):
         n = int(input("Deseja inserir mais uma diaria? (1-Sim/2-Não)" ))
@@ -90,7 +89,6 @@ data_em_texto = data_atual.strftime('%d/%m/%Y')
 print(f'\n{data_em_texto}\n\n')
 arquivo.writelines(f"Data: {data_em_texto}\n\n")
 
-#arquivo.write()
 if (ncem > 0):
     print(f"Precisaremos de {ncem} nota(s) de R$100,00")
     arquivo.writelines(f"Precisaremos de {ncem} nota(s) de R$100,00\n")
@@ -142,8 +140,6 @@ if (nc01 > 0):
 
 print(f'\nValor total de diarias: R${valortt}')
 arquivo.writelines(f"\nValor total de diarias: R${valortt}\n")
-#print(f'\nTotal de diarias = {cont}\n')
-#arquivo.writelines(f'Total de diarias = {cont}')
 
 arquivo.close()
 
